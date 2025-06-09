@@ -192,3 +192,115 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# ============================================================================
+# DATA TRANSFORMATION APPLICATION SPECIFIC
+# ============================================================================
+# 
+# This section excludes directories and files specific to our AI data 
+# transformation pipeline. Key exclusions:
+# - Processing outputs and session data (should not be in version control)
+# - Large input datasets (stored externally)
+# - Environment configurations (contain sensitive connection info)
+# - Temporary analysis data (can be regenerated)
+
+# Output data directory - contains translated/processed files
+output/
+output*/
+
+# Progress tracking data - session states and progress files
+.progress/
+*.progress
+
+# Malformed response analysis data - captured failed parsing attempts
+malformed_responses/
+
+# Input data directories - large datasets that shouldn't be in version control
+data/
+input_data/
+raw_data/
+
+# Application logs
+*.log
+logs/
+log/
+
+# Temporary processing files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Environment configuration (contains sensitive data)
+.env
+.env.local
+.env.production
+.env.staging
+.env*
+*.env
+
+# Environment file copies and backups
+".env copy"
+".env copy "*
+.env.copy
+.env_copy
+.env.bak
+
+# Keep example environment file for reference
+!.env.example
+
+# Session and cache files
+sessions/
+cache/
+.cache/
+
+# Model downloads and weights (if any)
+models/
+*.model
+*.weights
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# IDE and editor specific files (additional)
+.vscode/settings.json
+.vscode/launch.json
+.idea/workspace.xml
+.idea/tasks.xml
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Python virtual environment (additional patterns)
+venv*/
+env*/
+.virtualenv/
+
+# Test data and outputs
+test_output/
+test_data/
+sample_output/
+
+# Documentation build
+docs/_build/
+site/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# Performance profiling
+*.prof
+profile_output/
